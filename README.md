@@ -151,6 +151,10 @@ If you want `.tsrust` code blocks highlighted in Markdown previews, add this to 
 * ✅ direct tests for lexer, parser, lowering, and rewrite layers
 * 🚧 actual parser/AST, type-checking, full sourcemaps, macros/interops
 
+## Related projects
+
+- `pjs-transpiler`: JS-ish syntax to Python
+
 
 
 ## License: 
