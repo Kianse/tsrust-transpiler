@@ -1,0 +1,27 @@
+import { double } from "./util";
+import { add } from "./math";
+
+export function add_then_double(a: i32, b: i32): i32 {
+  ( double(add(a, b)) )
+}
+
+export function operate(a: i32, b: i32, op: i32): i32 {
+  switch (op) {
+    case 0:
+      { (add(a, b)) }
+    case 1:
+      { (double(add(a, b))) }
+    case 2:
+    case 3:
+      { (a - b) }
+    default:
+      { (0) }
+  }
+}
+
+// local arrow -> closure
+export const demo_closure = (a: i32): i32 => {
+  let scale = 3;
+  let times = (x: i32): i32 => { x * scale };
+  return (times(a))
+}

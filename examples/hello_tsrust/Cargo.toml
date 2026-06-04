@@ -1,0 +1,14 @@
+[package]
+name = "hello_tsrust"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+license = "Apache-2.0"
+repository = "https://github.com/Kianse/tsrust-transpiler"
+readme = "../../README.md"
+description = "TypeScript-ish syntax to Rust transpiler (prototype)"
+keywords = ["rust", "transpiler", "typescript", "compiler"]
+categories = ["compilers"]
+
+[build-dependencies]
+tsrust-build-driver = { path = "../../crates/build-driver" }

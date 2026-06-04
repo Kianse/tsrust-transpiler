@@ -1,0 +1,23 @@
+# Rust / Cargo
+/target
+**/*.vsix
+editors/vscode/tsrust/*.vsix
+
+# Local build output from tsrustc
+*.out
+hello
+out/
+**/.tsrust_build/
+
+# Local scratch / backups
+cmd
+*.rs_n
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+node_modules/

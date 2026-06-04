@@ -1,0 +1,6 @@
+export function double(x: i32): i32 { (x * 2) }
+
+export function log_pair(a: i32, b: i32): () {
+  println!("pair = {}, {}", a, b);
+  // unit: terminal can be omitted
+}

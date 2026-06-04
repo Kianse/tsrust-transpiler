@@ -1,0 +1,21 @@
+{
+  "function": {
+    "prefix": "fn",
+    "body": [
+      "export function ${1:name}(${2:args}: ${3:Type}): ${4:Ret} {",
+      "  (${5:expr})",
+      "}"
+    ],
+    "description": "tsrust function"
+  },
+  "println": {
+    "prefix": "pln",
+    "body": ["println!(\"$1\");"],
+    "description": "println! macro"
+  },
+  "import": {
+    "prefix": "imp",
+    "body": ["import { ${1:Name} } from \"${2:./path}\";"],
+    "description": "import { ... } from \"...\""
+  }
+}

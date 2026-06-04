@@ -1,0 +1,33 @@
+{
+  "name": "tsrust-syntax",
+  "displayName": "tsrust syntax",
+  "description": "Syntax highlighting for tsrust (TypeScript-ish syntax that compiles to Rust).",
+  "version": "0.1.0",
+  "publisher": "your-name-or-org",
+  "engines": { "vscode": "^1.75.0" },
+  "categories": ["Programming Languages"],
+  "license": "Apache-2.0",
+  "contributes": {
+    "languages": [
+      {
+        "id": "tsrust",
+        "aliases": ["tsrust", "TSRust"],
+        "extensions": [".tsrust"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tsrust",
+        "scopeName": "source.tsrust",
+        "path": "./syntaxes/tsrust.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "tsrust",
+        "path": "./snippets/tsrust.json"
+      }
+    ]
+  }
+}

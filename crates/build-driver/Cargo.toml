@@ -1,0 +1,18 @@
+[package]
+name = "tsrust-build-driver"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/Kianse/tsrust-transpiler"
+readme = "../../README.md"
+description = "TypeScript-ish syntax to Rust transpiler (prototype)"
+keywords = ["rust", "transpiler", "typescript", "compiler"]
+categories = ["compilers"]
+
+[dependencies]
+anyhow = "1"
+walkdir = "2"
+tsrust-transpiler = { path = "../transpiler" }
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

@@ -1,0 +1,126 @@
+{
+  "scopeName": "source.tsrust",
+  "name": "tsrust",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#macros" },
+    { "include": "#fn-decl" },
+    { "include": "#import-export" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.tsrust", "match": "//.*$" },
+        {
+          "name": "comment.block.tsrust",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [{ "include": "#comments" }]
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.tsrust", "begin": "\"", "end": "\"", "patterns": [{ "include": "#escapes" }] },
+        { "name": "string.quoted.single.tsrust", "begin": "'", "end": "'", "patterns": [{ "include": "#escapes" }] },
+        { "name": "string.quoted.template.tsrust", "begin": "`", "end": "`", "patterns": [{ "include": "#escapes" }] }
+      ]
+    },
+    "escapes": {
+      "patterns": [
+        { "name": "constant.character.escape.tsrust", "match": "\\\\([btnr0\"'`\\\\]|x[0-9A-Fa-f]{2}|u\\{[0-9A-Fa-f]+\\})" }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.tsrust", "match": "\\b\\d(?:[\\d_]*\\d)?\\b" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.tsrust",
+          "match": "\\b(?:export|import|from|as|function|return|async|await|for|of|if|else|match|while|break|continue|let|const|pub|mod|use)\\b"
+        },
+        { "name": "keyword.operator.arrow.tsrust", "match": "=>"}
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.primitive.tsrust",
+          "match": "\\b(?:i8|i16|i32|i64|i128|isize|u8|u16|u32|u64|u128|usize|f32|f64|bool|char|str|String|\\(\\))\\b"
+        },
+        {
+          "name": "entity.name.type.tsrust",
+          "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+        }
+      ]
+    },
+    "macros": {
+      "patterns": [
+        {
+          "name": "support.function.macro.tsrust",
+          "match": "\\b([A-Za-z_][A-Za-z0-9_]*)!(?=\\()"
+        },
+        {
+          "name": "support.function.print.tsrust",
+          "match": "\\bprintln!\\b"
+        }
+      ]
+    },
+    "fn-decl": {
+      "patterns": [
+        {
+          "name": "meta.function.tsrust",
+          "begin": "\\b(?:pub\\s+)?fn\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(",
+          "beginCaptures": { "1": { "name": "entity.name.function.tsrust" } },
+          "end": "\\)",
+          "patterns": [
+            { "name": "variable.parameter.tsrust", "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b" },
+            { "include": "#types" },
+            { "include": "#comments" }
+          ]
+        },
+        {
+          "name": "meta.function.tsrust.ts-style",
+          "begin": "\\b(?:export\\s+)?function\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(",
+          "beginCaptures": { "1": { "name": "entity.name.function.tsrust" } },
+          "end": "\\)",
+          "patterns": [
+            { "name": "variable.parameter.tsrust", "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b" },
+            { "include": "#types" },
+            { "include": "#comments" }
+          ]
+        }
+      ]
+    },
+    "import-export": {
+      "patterns": [
+        {
+          "name": "meta.import.tsrust",
+          "match": "(?x)\n^\\s*import\\s*\\{[^}]*\\}\\s*from\\s*\"[^\"]+\"\\s*;?\n"
+        },
+        {
+          "name": "meta.import.namespace.tsrust",
+          "match": "^\\s*import\\s*\\*\\s*as\\s*[A-Za-z_][A-Za-z0-9_]*\\s*from\\s*\"[^\"]+\"\\s*;?"
+        },
+        {
+          "name": "meta.export.tsrust",
+          "match": "^\\s*export\\s*\\{[^}]*\\}(?:\\s*from\\s*\"[^\"]+\")?\\s*;?"
+        },
+        {
+          "name": "meta.export.star.tsrust",
+          "match": "^\\s*export\\s*\\*\\s*from\\s*\"[^\"]+\"\\s*;?"
+        }
+      ]
+    }
+  },
+  "injectionSelector": "L:source.tsrust",
+  "fileTypes": ["tsrust"],
+  "uuid": "3b1d6f1c-9a4b-4b8b-9a09-9b32d2f9c3e0"
+}

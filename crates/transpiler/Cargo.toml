@@ -1,0 +1,19 @@
+[package]
+name = "tsrust-transpiler"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/Kianse/tsrust-transpiler"
+readme = "../../README.md"
+description = "TypeScript-ish syntax to Rust transpiler (prototype)"
+keywords = ["rust", "transpiler", "typescript", "compiler"]
+categories = ["compilers"]
+
+[dependencies]
+anyhow = "1"
+regex = "1"
+tsrust-lowering = { path = "../lowering" }
+tsrust-parser   = { path = "../parser" }
+tsrust-lexer    = { path = "../lexer" }
+tsrust-ast      = { path = "../ast" }
+tsrust-sourcemap = { path = "../sourcemap" }

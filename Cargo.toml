@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "crates/build-driver",
+    "crates/transpiler",
+    "crates/syntax",
+    "crates/lowering",
+    "crates/sourcemap",
+    "crates/ast",
+    "crates/lexer",
+    "crates/parser",
+    "examples/hello_tsrust",
+    "tooling/error-post",
+    "tooling/tsrustc",
+]
+resolver = "2"
